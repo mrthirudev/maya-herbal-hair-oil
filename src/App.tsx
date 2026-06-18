@@ -8,8 +8,8 @@ export default function App() {
     <div className="app-root">
       <header className="site-header">
         <picture>
-          <source srcSet="/assets/logo.png" type="image/png" />
-          <img src="/assets/logo.svg" alt="MAYA logo" className="logo" />
+          <source srcSet={`${import.meta.env.BASE_URL}assets/logo.png`} type="image/png" />
+          <img src={`${import.meta.env.BASE_URL}assets/logo.svg`} alt="MAYA logo" className="logo" />
         </picture>
       </header>
       <main>

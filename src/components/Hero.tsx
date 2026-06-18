@@ -40,8 +40,8 @@ export default function Hero() {
       </div>
       <div className="hero-right">
         <picture>
-          <source srcSet="/assets/banner.png" type="image/png" />
-          <img src="/assets/banner.svg" alt="Maya Bottle" />
+          <source srcSet={`${import.meta.env.BASE_URL}assets/banner.png`} type="image/png" />
+          <img src={`${import.meta.env.BASE_URL}assets/banner.svg`} alt="Maya Bottle" />
         </picture>
       </div>
     </section>
