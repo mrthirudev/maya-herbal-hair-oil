@@ -17,6 +17,10 @@ jobs:
         run: |
           rm -f package-lock.json
           npm install --no-optional
+      - name: Ensure Rollup native package for Linux is present
+        run: |
+          # Install the linux native rollup package so Rollup's native loader won't fail
+          npm install @rollup/rollup-linux-x64-gnu --no-save || true
       - name: Build
         run: npm run build
       - name: Deploy
