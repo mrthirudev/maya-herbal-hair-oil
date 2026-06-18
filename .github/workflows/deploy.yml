@@ -13,14 +13,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-      - name: Install dependencies (remove lockfile and skip optional native binaries)
-        run: |
-          rm -f package-lock.json
-          npm install --no-optional
-      - name: Ensure Rollup native package for Linux is present
-        run: |
-          # Install the linux native rollup package so Rollup's native loader won't fail
-          npm install @rollup/rollup-linux-x64-gnu --no-save || true
+      - name: Install dependencies
+        run: npm ci
       - name: Build
         run: npm run build
       - name: Deploy
