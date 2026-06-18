@@ -13,8 +13,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-      - name: Install dependencies (skip optional native binaries)
-        run: npm install --no-optional
+      - name: Install dependencies (remove lockfile and skip optional native binaries)
+        run: |
+          rm -f package-lock.json
+          npm install --no-optional
       - name: Build
         run: npm run build
       - name: Deploy
